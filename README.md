@@ -39,26 +39,28 @@ The target variable in this analysis is the Current_loan_status, which has two p
 
 <h3>Project Structure</h3>
 <hr/>
-<h4>Part I: Summary of Dataset</h4>
+<h4>Part I: Summary of Demographic Dataset</h4>
 
-<p>
-Demographic and Loan Characteristics Dataset
-</p>
+<p> Age Distribution: This graph shows the age range of applicants and helps identify which age groups are most likely to apply for loans. 
+
+KDE (Kernel Density Estimate): The curvy line you see on top of the histogram is the KDE. This is a smoothed version of the histogram, which estimates the probability density function of the age variable. The KDE line shows where the data points are concentrated, providing a clearer view of the distribution's shape compared to the histogram alone.</p>
+
+![Pic_1](https://github.com/user-attachments/assets/99ed9c4b-161b-4df2-aa1d-7244125a6933)
 
 
-```python
-# Import our dependencies
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
-import tensorflow as tf
+<p> Home Ownership vs Loan Acceptance: This count plot illustrates the relationship between home ownership and historical defaults, informing potential risk factors for loan acceptance.</p>
 
-#  Import and read the charity_data.csv.
-import pandas as pd
-application_df = pd.read_csv("https://static.bc-edx.com/data/dl-1-2/m21/lms/starter/charity_data.csv")
-application_df.head()
 
-```
+![pic_2](https://github.com/user-attachments/assets/86fba4d5-2d2c-4361-b7e3-065ffbd3da12)
+
+
+<p> # Count of Loan Applicants by Income Category: This count plot provides insights into how many people fall into each income category, guiding the bank's loan policies.</p>
+
+
+![pic_4](https://github.com/user-attachments/assets/4afbcb0e-ef5c-4c5c-9912-c97f70d35448)
+
+
+
 <hr/>
 
 <h4>Part II: Machine Learning</h4>
