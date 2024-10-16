@@ -70,30 +70,64 @@ KDE (Kernel Density Estimate): The curvy line you see on top of the histogram is
 Logistic Regression and Forest Random Tree
 
 <b>Model Summary:</b>
+<p>
+Before the model was fit to the data, the data was split into training and testing subsets, and categorical variables were encoded into dummy variables. The training and testing sets contained 75% and 25% of the total dataset, respectively. The same training and testing sets were used for all 3 types of models (logistic, tree, random forest). Dummy variables were a method to make all the feature variables numeric and feedable into the sigmoid function underlying logistic regression. 
+</p>
+
+<p>
+In addition to predicting whether a loan is defaulted or not, the three types of models (logistic, tree, and random) predict the <i> probability </i> of the loan being defaulted or not. In fact, the logistic regression uses this estimated probability to predict which one of the 2 categories (default or not) the loan falls. In a tree model, the probability of being defaulted for a test data point is the proportion of training data that have a target variable values of 'default' in the leaf in which the test data point falls (https://medium.com/ml-byte-size/how-does-decision-tree-output-predict-proba-12c78634c9d5). For the probability of not being defaulted, the same principle applies. 
+</p> 
+
+<p>
+The three types of models were evaluated with confusion matrices and classification reports to determine their robustness. The following statistics were generated. 
+</p>
+
+
+<p>
+<b>Logistic Regression Summary:</b>
+</p>
 
 <ul>
-<li>2 hidden layers (8 and 3 nodes)</li>
-<li>50 EPOCH</li>
-<li>Activation Functions: ReLU and sigmoid (Output)</li>
-<li>Result: 72.82%</li>
+<li>Accuracy: 0.95 (No Default)</li>
+<li>Precision: 0.97 (No Default), 0.88 (Default)</li>
+
+<li>Recall: 0.97 (No Default), 0.87 (Default)</li>
+
+</ul>
+
+</p>
+
+<p>
+<b>Tree Summary:</b>
+</p>
+
+<ul>
+<li>Accuracy: </li>
+<li>Precision:  (No Default),  (Default)</li>
+
+<li>Recall:  (No Default),  (Default)</li>
+
+</ul>
+
+</p>
+
+<p>
+<b>Random Forest Summary:</b>
+</p>
+
+<ul>
+<li>Accuracy: </li>
+<li>Precision:  (No Default),  (Default)</li>
+
+<li>Recall:  (No Default),  (Default)</li>
+
 </ul>
 
 </p>
 
 
-```python
 
-# Import our dependencies
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
-import tensorflow as tf
 
-#  Import and read the charity_data.csv.
-import pandas as pd
-application_df = pd.read_csv("https://static.bc-edx.com/data/dl-1-2/m21/lms/starter/charity_data.csv")
-application_df.head()
-```
 <hr/>
 
 <h4>Part III: CNN Convolutional Neuron Network</h4>
@@ -117,6 +151,8 @@ application_df.head()
 
 
 ```
+
+
 <p>
 <b>Optimization Model 1 Summary:</b>
 
