@@ -1,12 +1,9 @@
-# Columbia_Engineering_Data_Analytics_Project_4
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optimization Models Summary</title>
-  <style>
+    <style>
     table {
       width: 100%;
       border-collapse: collapse;
@@ -40,9 +37,9 @@
   </style>
 </head>
 
-Below Readme is just a template of the project IV
+# Columbia_Engineering_Data_Analytics_Project_4
 
-<h2>Alphabet Soup Charity</h2>
+<h2>Machine Learning Model with Loan-Dataset </h2>
 
 <h3>Overview</h3>
 
