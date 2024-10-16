@@ -1,5 +1,45 @@
 # Columbia_Engineering_Data_Analytics_Project_4
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimization Models Summary</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 2px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    td {
+      color: black;
+    }
+    .highlight_1 {
+      color: green;
+      font-weight: bold;
+    }
+    .highlight_2 {
+        color: red;
+        font-weight:bold;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul ul {
+      padding-left: 15px;
+    }
+  </style>
+</head>
+
 Below Readme is just a template of the project IV
 
 <h2>Alphabet Soup Charity</h2>
@@ -18,9 +58,17 @@ The target variable in this analysis is the Current_loan_status, which has two p
 
 <ul>
 <li>Understainding dataset</li>
-<li>preprocessing dataset for each summary</li>
-<li>goal_3</li>
-<li>goal_4</li>
+<li>Cleaning dataset</li>
+<li>Preprocessing dataset</li>
+<li>Making Machine Learning Models
+<ul>
+<li>Logistic Regression Model</li>
+<li>Decision Tree Model</li>
+<li>Random Forest Model</li>
+<li>Neural Network Model</li>
+<li>Deep Learning</li>
+</ul>
+</li>
 </ul>
 
 </hr>
@@ -130,58 +178,96 @@ The three types of models were evaluated with confusion matrices and classificat
 
 <hr/>
 
-<h4>Part III: CNN Convolutional Neuron Network</h4>
+<h4>Part III: Neural Network and Deep Learning Model</h4>
 
 <p>
-Deep Learning Model
+<b>Dataset Preparation</b><br/>
+The cleaned dataset was divided into two subsets:
+<ul>
+<li>df_w_bucket: Includes bucketed or categorized variables.</li>
+<li>df_wo_bucket: Excludes bucketed or categorized variables.</li>
+</ul>
+The purpose of this separation was to analyze which type of variables—numerical or categorical—perform better when applied to neural network models.
+
+<b>Experimentation with Neural Network Models</b><br/>
+Several experiments were conducted using the two datasets to optimize the neural network’s performance. Key hyperparameters were adjusted to explore their impact on model accuracy:
+<ul>
+<li>Number of nodes in each layer</li>
+<li>Number of hidden layers</li>
+</ul>
+<b>Results and Insights</b><br/>
+The results were highly promising, with all tested models achieving over 90% accuracy. This indicates that the models are well-suited for practical applications.
+</br></br>
+
+<b>In conclusion</b>, the neural network models performed consistently across various configurations and can be effectively utilized in real-world scenarios. Further tuning may enhance the results, but the current models are already reliable and robust.
 </p>
 
-```python
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Model</th>
+      <th>Hidden Layers</th>
+      <th>EPOCH</th>
+      <th>Activation Functions</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="highlight_1" rowspan="3">df_w_buckets</td>
+      <td><b>Optimization Model 1</b></td>
+      <td>2 layers (8 and 4 nodes)</td>
+      <td>50</td>
+      <td>ReLU, Sigmoid (Output)</td>
+      <td>95.7%</td>
+    </tr>
+    <tr>
+      <td><b>Optimization Model 2</b></td>
+      <td>2 layers (6, 4 nodes)</td>
+      <td>50</td>
+      <td>ReLU, Sigmoid (Output)</td>
+      <td>95.6%</td>
+    </tr>
+    <tr>
+      <td><b>Optimization Model 3</b></td>
+      <td>1 layers (8 nodes)</td>
+      <td>50</td>
+      <td>ReLU, Sigmoid (Output)</td>
+      <td>96.2%</td>
+    </tr>
+    <tr>
+      <td class="highlight_2" rowspan="3">df_wo_buckets</td>
+      <td><b>Optimization Model 1</b></td>
+      <td>2 layers (8 and 4 nodes)</td>
+      <td>50</td>
+      <td>ReLU, <b>ELU</b>, Sigmoid (Output)</td>
+      <td>93.0%</td>
+    </tr>
+    <tr>
+      <td><b>Optimization Model 2</b></td>
+      <td>2 layers (6, 4 nodes)</td>
+      <td>50</td>
+      <td>ReLU, Sigmoid (Output)</td>
+      <td>93.1%</td>
+    </tr>
+    <tr>
+      <td><b>Optimization Model 3</b></td>
+      <td>1 layers (8 nodes)</td>
+      <td>50</td>
+      <td>ReLU, Sigmoid (Output)</td>
+      <td>93.2%</td>
+    </tr>
+  </tbody>
+</table>
 
-# Import our dependencies
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
-import tensorflow as tf
-
-#  Import and read the charity_data.csv.
-import pandas as pd
-application_df = pd.read_csv("https://static.bc-edx.com/data/dl-1-2/m21/lms/starter/charity_data.csv")
-application_df.head()
+</body>
+</html>
 
 
-```
 
 
-<p>
-<b>Optimization Model 1 Summary:</b>
 
-<ul>
-<li>2 hidden layers (8 and 3 nodes)</li>
-<li>50 EPOCH</li>
-<li>Activation Functions: ReLU, <b>ELU</b> and Sigmoid (Output)</li>
-<li>Result: 79.44%</li>
-</ul>
-
-<b>Optimization Model 2 Summary:</b>
-
-<ul>
-<li>3 hidden layers (8, 5, 3 nodes)</li>
-<li>50 EPOCH</li>
-<li>Activation Functions: ReLU and sigmoid (Output)</li>
-<li>Result: 79.46%</li>
-</ul>
-
-<b>Optimization Model 3 Summary:</b>
-
-<ul>
-<li>3 hidden layers (8, 5, 3 nodes)</li>
-<li>100 EPOCH</li>
-<li>Activation Functions: ReLU, ELU and Sigmoid (Output)</li>
-<li style="color: green;"><b>Result: 79.52%</b></li>
-</ul>
-
-</p>
 
 <hr/>
 
