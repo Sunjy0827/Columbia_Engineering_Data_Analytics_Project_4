@@ -219,19 +219,13 @@ The results were highly promising, with all tested models achieving over 90% acc
     </tr>
   </tbody>
 </table>
-
-</body>
-</html>
-
-
-
-
-
-
+<img src="./images/Model I-VI.PNG" alt="accuracy_progress_combined_image"/>
 <hr/>
-
 <h3>Final Summary</h3>
-
 <p>
-With the loan dataset, we could ...
+We developed a total of five different machine learning models, with 11 variations, including six versions based on neural networks and deep learning. Each model achieved an accuracy of over 93%, indicating strong performance suitable for real-world applications. However, to ensure transparency in the decision-making process, we recommend focusing on Logistic Regression and Decision Tree models, as these allow loan departments to better understand which variables most influence loan eligibility decisions. Additionally, instead of limiting the model to binary outcomes, we propose creating a multi-class model that categorizes applicants into different loan eligibility tiers, making the results more practical and aligned with real-world lending scenarios.
+
+<img src="./images/final_image.png" alt="final_image"/>
+
+<img >
 </p>
