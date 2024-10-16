@@ -1,42 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 2px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
-    td {
-      color: black;
-    }
-    .highlight_1 {
-      color: green;
-      font-weight: bold;
-    }
-    .highlight_2 {
-        color: red;
-        font-weight:bold;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    ul ul {
-      padding-left: 15px;
-    }
-  </style>
-</head>
-
 # Columbia_Engineering_Data_Analytics_Project_4
 
 <h2>Machine Learning Model with Loan-Dataset </h2>
@@ -58,7 +19,7 @@ The target variable in this analysis is the Current_loan_status, which has two p
 <li>Cleaning dataset</li>
 <li>Preprocessing dataset</li>
 <li>Making Machine Learning Models
-<ul>
+<ul style= "padding-left: 15px;">
 <li>Logistic Regression Model</li>
 <li>Decision Tree Model</li>
 <li>Random Forest Model</li>
@@ -200,7 +161,8 @@ The results were highly promising, with all tested models achieving over 90% acc
 </p>
 
 <table>
-  <thead>
+  <thead background-color: #f2f2f2;
+      font-weight: bold;>
     <tr>
       <th>Dataset</th>
       <th>Model</th>
@@ -212,7 +174,7 @@ The results were highly promising, with all tested models achieving over 90% acc
   </thead>
   <tbody>
     <tr>
-      <td class="highlight_1" rowspan="3">df_w_buckets</td>
+      <td rowspan="3" style="color: green; font-weight: bold;">df_w_buckets</td>
       <td><b>Optimization Model 1</b></td>
       <td>2 layers (8 and 4 nodes)</td>
       <td>50</td>
@@ -234,7 +196,7 @@ The results were highly promising, with all tested models achieving over 90% acc
       <td>96.2%</td>
     </tr>
     <tr>
-      <td class="highlight_2" rowspan="3">df_wo_buckets</td>
+      <td rowspan="3" style="color: red; font-weight: bold;">df_wo_buckets</td>
       <td><b>Optimization Model 1</b></td>
       <td>2 layers (8 and 4 nodes)</td>
       <td>50</td>
