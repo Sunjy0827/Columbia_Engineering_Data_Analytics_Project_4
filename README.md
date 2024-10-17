@@ -68,6 +68,7 @@ The data shows historical defaults by age bracket, revealing that younger borrow
 
 ![pic_6](https://github.com/user-attachments/assets/d2c26932-3328-42e7-b9f5-7f24c16b04fc)
 
+<hr/>
 
 <b>Loan Characteristics</b>
 
@@ -98,7 +99,7 @@ The stacked bar chart shows the number of loans by loan grade and default status
 </br>
 
 <p>
-Logistic Regression, Decision Trees, and Random Forest
+<b>Logistic Regression, Decision Trees, and Random Forest</b>
 
 <b>Model Description:</b>
 <p>
@@ -180,12 +181,11 @@ The three types of models were evaluated with confusion matrices and classificat
 
 <p>
 In evaluating the models, we focused on accuracy and emphasized recall(default) especially because this number signified the number of loans predicted to default out of all the loans that did actually default. In other words, it represented the financial risk of the lending business resulting from its failure to detect the customers who would default by using one of these models. First, logistic regression had a high accuracy of 95% but had a 87% recall (default), signaling a 13% financial loss for the company. For the trees, tree1 was disregarded simply for its lowest recall (default) of 74%. Next, even though logistic regression had an 87% recall (default), which was the same as tree2, tree2 outperformed logistic regression in all othe measures. Nonetheless, the random forest model either performed as well as or surpassed the tree and logistic regression models in all metrics of accuracy, precision, and accuracy, signaling its strong predictive abilities. 
-
-
+</p>
 
 <hr/>
 
-<h4>Part III: Neural Network and Deep Learning Model</h4>
+<b>Neural Network and Deep Learning Model</b>
 
 <p>
 <b>Dataset Preparation</b><br/>
