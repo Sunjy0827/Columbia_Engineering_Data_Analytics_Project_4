@@ -71,6 +71,35 @@ The data shows historical defaults by age bracket, revealing that younger borrow
 
 <hr/>
 
+
+<hr/>
+
+
+<p> Number of Customers vs Employment Duration:
+The bar chart represents the distribution of customers categorized by their employment duration and whether they have defaulted on a loan or not.</p>
+
+https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_7.png
+
+<p> Default Vs No Default by loan categorization
+The donut charts provide a detailed visualization of loan defaults and no defaults categorized by the intent of the loan.
+</p>
+
+https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_8.png
+
+
+
+<p> Number of Loans Vs Loan Grade with indication of Default and No Default  
+The stacked bar chart shows the number of loans by loan grade and default status, as well as the default rate for each loan grade.
+
+</p>
+
+https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_9.png
+
+
+<hr/>
+
+
+<hr/>
 <h4>Part II: Machine Learning</h4>
 </br>
 
