@@ -45,7 +45,9 @@ The target variable in this analysis is the Current_loan_status, which has two p
 
 <h3>Project Structure</h3>
 <hr/>
-<h4>Part I: Summary of Demographic Dataset</h4>
+<h4>Part I: Data Exploration</h4>
+
+<b>Summary of Demographic Dataset</b>
 
 <p> Home Ownership vs Loan Acceptance:
 The graph shows that homeowners have lower loan default rates than renters. Homeownership promotes financial stability, as homeowners prioritize mortgage payments, while renters face more volatility, increasing their default risk.</p>
@@ -67,8 +69,7 @@ The data shows historical defaults by age bracket, revealing that younger borrow
 ![pic_6](https://github.com/user-attachments/assets/d2c26932-3328-42e7-b9f5-7f24c16b04fc)
 
 
-<hr/>
-
+<b>Loan Characteristics</b>
 
 <p> Number of Customers vs Employment Duration:
 The bar chart represents the distribution of customers categorized by their employment duration and whether they have defaulted on a loan or not.</p>
@@ -90,10 +91,9 @@ The stacked bar chart shows the number of loans by loan grade and default status
 
 <img src="https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_9.png" alt ="pic_9"/>
 
-<hr/>
-
 
 <hr/>
+
 <h4>Part II: Machine Learning</h4>
 </br>
 
