@@ -100,7 +100,7 @@ The stacked bar chart shows the number of loans by loan grade and default status
 <p>
 Logistic Regression, Decision Trees, and Random Forest
 
-<b>Model Summary:</b>
+<b>Model Description:</b>
 <p>
 Before the models were fit to the data, the data was split into training and testing subsets, and categorical variables were encoded into dummy variables. The training and testing sets contained 75% and 25% of the total dataset, respectively. The same training and testing sets were used for all 3 types of models (logistic, tree, random forest). Dummy variables were a method to make all the feature variables numeric and feedable into the sigmoid function underlying logistic regression. For the tree and random forest models, the data was scaled. 
 </p>
