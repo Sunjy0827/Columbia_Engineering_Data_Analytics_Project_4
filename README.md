@@ -195,7 +195,7 @@ The cleaned dataset was divided into two subsets:
 <li>df_wo_bucket: Excludes bucketed or categorized variables.</li>
 </ul>
 The purpose of this separation was to analyze which type of variables—numerical or categorical— perform better when applied to neural network models.
-
+</br>
 <b>Experimentation with Neural Network Models</b><br/>
 Several experiments were conducted using the two datasets to optimize the neural network’s performance. Key hyperparameters were adjusted to explore their impact on model accuracy:
 <ul>
