@@ -75,16 +75,26 @@ The data shows historical defaults by age bracket, revealing that younger borrow
 </br>
 
 <p>
-Logistic Regression and Forest Random Tree
+Logistic Regression, Decision Trees, and Random Forest
 
 <b>Model Summary:</b>
 <p>
-Before the model was fit to the data, the data was split into training and testing subsets, and categorical variables were encoded into dummy variables. The training and testing sets contained 75% and 25% of the total dataset, respectively. The same training and testing sets were used for all 3 types of models (logistic, tree, random forest). Dummy variables were a method to make all the feature variables numeric and feedable into the sigmoid function underlying logistic regression. 
+Before the models were fit to the data, the data was split into training and testing subsets, and categorical variables were encoded into dummy variables. The training and testing sets contained 75% and 25% of the total dataset, respectively. The same training and testing sets were used for all 3 types of models (logistic, tree, random forest). Dummy variables were a method to make all the feature variables numeric and feedable into the sigmoid function underlying logistic regression. For the tree and random forest models, the data was scaled. 
 </p>
 
 <p>
-In addition to predicting whether a loan is defaulted or not, the three types of models (logistic, tree, and random) predict the <i> probability </i> of the loan being defaulted or not. In fact, the logistic regression uses this estimated probability to predict which one of the 2 categories (default or not) the loan falls. In a tree model, the probability of being defaulted for a test data point is the proportion of training data that have a target variable values of 'default' in the leaf in which the test data point falls (https://medium.com/ml-byte-size/how-does-decision-tree-output-predict-proba-12c78634c9d5). For the probability of not being defaulted, the same principle applies. 
+Next, the logistic regression, tree, and random forest models were fit to the data. For the trees, we initially did not set a limit on the depth of the tree but upon seeing its massive size, considerations about trees' tendency to overfit the training data, and our desire to build a model that includes the probabilities of an observation/loan being defaulted or not, we opted to set limits on the max depth, trying both a max depth of 5 and a max depth of 10. For our random forest model, we initially used 5000 trees for the model, but with a slow processing time, we adjusted the number of trees to 100. Since the metrics accuracy, precision, and recall seemed to be more or less the same as the forest with 5000 trees, we chose 100 trees for the random forest. 
+
+</p>
+
+<p>
+In addition to predicting whether a loan is defaulted or not, the three types of models (logistic, tree, and random) predict the <i> probability </i> of the loan being defaulted or not. In fact, the logistic regression uses this estimated probability to predict which one of the 2 categories (default or not) the loan falls. In a tree model, the probability of being defaulted for a test data point is the proportion of training data that have a target variable values of 'default' in the leaf in which the test data point falls (https://medium.com/ml-byte-size/how-does-decision-tree-output-predict-proba-12c78634c9d5). For the probability of not being defaulted, the same principle applies. In a random forest model, the probability of a loan being defaulted is calculated by the proportion of trees in the forest that predict the loan will be defaulted (Cite this later).
 </p> 
+
+<p>
+In printing out the tree, we noticed the term, 'gini index' in each node. Upon some research online, we clarified that gini index was a quantity between 0 and 1 that measured the degree of training observations in a tree node in falling into 1 class. A gini index closer to 1 means a larger amount of training observations not belonging to the same class. A gini index closer to 0 means a larger amount of training observations belonging to the same class. In other words, the gini index of a node measures how effective the split was that resulted in that particular node. 
+
+</p>
 
 <p>
 The three types of models were evaluated with confusion matrices and classification reports to determine their robustness. The following statistics were generated. 
@@ -92,7 +102,7 @@ The three types of models were evaluated with confusion matrices and classificat
 
 
 <p>
-<b>Logistic Regression Summary:</b>
+<b>Logistic Regression:</b>
 </p>
 
 <ul>
@@ -106,33 +116,47 @@ The three types of models were evaluated with confusion matrices and classificat
 </p>
 
 <p>
-<b>Tree Summary:</b>
+<b>Tree 1 (Max Depth 5):</b>
 </p>
 
 <ul>
-<li>Accuracy: </li>
-<li>Precision:  (No Default),  (Default)</li>
+<li> Accuracy: 0.94 </li>
+<li>Precision: (No Default) 0.94, 0.94 (Default)</li>
+<li>Recall: 0.99 (No Default),  0.74 (Default)</li>
+</ul>
 
-<li>Recall:  (No Default),  (Default)</li>
+</p>
+
+
+<p>
+<b>Tree 2 (Max Depth 10):</b>
+</p>
+
+
+<ul>
+<li> Accuracy: 0.96 </li>
+<li>Precision: (No Default) 0.97, 0.93 (Default)</li>
+<li>Recall: 0.98 (No Default),  0.87 (Default)</li>
+</ul>
+
+</p>
+
+<p>
+<b>Random Forest:</b>
+</p>
+
+<ul>
+<li>Accuracy: 0.97</li>
+<li>Precision: 0.97 (No Default), 0.94 (Default)</li>
+
+<li>Recall: 0.98 (No Default), 0.89 (Default)</li>
 
 </ul>
 
 </p>
 
 <p>
-<b>Random Forest Summary:</b>
-</p>
-
-<ul>
-<li>Accuracy: </li>
-<li>Precision:  (No Default),  (Default)</li>
-
-<li>Recall:  (No Default),  (Default)</li>
-
-</ul>
-
-</p>
-
+In evaluating the models, we focused on accuracy and emphasized recall(default) especially because this number signified the number of loans predicted to default out of all the loans that did actually default. In other words, it represented the financial risk of the lending business resulting from its failure to detect the customers who would default by using one of these models. First, logistic regression had a high accuracy of 95% but had a 87% recall (default), signaling a 13% financial loss for the company. For the trees, tree1 was disregarded simply for its lowest recall (default) of 74%. Next, even though logistic regression had an 87% recall (default), which was the same as tree2, tree2 outperformed logistic regression in all othe measures. Nonetheless, the random forest model either performed as well as or surpassed the tree and logistic regression models in all metrics of accuracy, precision, and accuracy, signaling its strong predictive abilities. 
 
 
 
@@ -147,7 +171,7 @@ The cleaned dataset was divided into two subsets:
 <li>df_w_bucket: Includes bucketed or categorized variables.</li>
 <li>df_wo_bucket: Excludes bucketed or categorized variables.</li>
 </ul>
-The purpose of this separation was to analyze which type of variables—numerical or categorical—perform better when applied to neural network models.
+The purpose of this separation was to analyze which type of variables—numerical or categorical— perform better when applied to neural network models.
 
 <b>Experimentation with Neural Network Models</b><br/>
 Several experiments were conducted using the two datasets to optimize the neural network’s performance. Key hyperparameters were adjusted to explore their impact on model accuracy:
