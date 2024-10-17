@@ -67,11 +67,6 @@ The data shows historical defaults by age bracket, revealing that younger borrow
 ![pic_6](https://github.com/user-attachments/assets/d2c26932-3328-42e7-b9f5-7f24c16b04fc)
 
 
-
-
-<hr/>
-
-
 <hr/>
 
 
