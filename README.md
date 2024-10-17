@@ -47,23 +47,25 @@ The target variable in this analysis is the Current_loan_status, which has two p
 <hr/>
 <h4>Part I: Summary of Demographic Dataset</h4>
 
-<p> Age Distribution: This graph shows the age range of applicants and helps identify which age groups are most likely to apply for loans. 
+<p> Home Ownership vs Loan Acceptance:
+The graph shows that homeowners have lower loan default rates than renters. Homeownership promotes financial stability, as homeowners prioritize mortgage payments, while renters face more volatility, increasing their default risk.</p>
 
-KDE (Kernel Density Estimate): The curvy line you see on top of the histogram is the KDE. This is a smoothed version of the histogram, which estimates the probability density function of the age variable. The KDE line shows where the data points are concentrated, providing a clearer view of the distribution's shape compared to the histogram alone.</p>
-
-![Pic_1](https://github.com/user-attachments/assets/99ed9c4b-161b-4df2-aa1d-7244125a6933)
-
-
-<p> Home Ownership vs Loan Acceptance: This count plot illustrates the relationship between home ownership and historical defaults, informing potential risk factors for loan acceptance.</p>
+![pic_2](https://github.com/user-attachments/assets/547f5b47-845d-4fe9-8cad-d3580be79f35)
 
 
-![pic_2](https://github.com/user-attachments/assets/86fba4d5-2d2c-4361-b7e3-065ffbd3da12)
+<p>Count of Loan Applicants by Income Category:
+The data shows loan applicants by income level, revealing that lower-income individuals have higher default rates, while higher-income applicants are less likely to default. This highlights the link between income and loan repayment behavior.</p>
+
+![pic_4](https://github.com/user-attachments/assets/5d1b2e92-72d3-41b2-84be-d3e8dfd5b50d)
 
 
-<p> # Count of Loan Applicants by Income Category: This count plot provides insights into how many people fall into each income category, guiding the bank's loan policies.</p>
 
+<p> Count of Loan Applicants by Income Category:  
+The data shows historical defaults by age bracket, revealing that younger borrowers have higher default rates, while older groups tend to default less. This highlights the influence of age on loan repayment behavior.
+</p>
 
-![pic_4](https://github.com/user-attachments/assets/4afbcb0e-ef5c-4c5c-9912-c97f70d35448)
+![pic_6](https://github.com/user-attachments/assets/d2c26932-3328-42e7-b9f5-7f24c16b04fc)
+
 
 
 
