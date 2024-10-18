@@ -92,7 +92,7 @@ In addition to predicting whether a loan is defaulted or not, the three types of
 </p> 
 
 <p>
-In printing out the tree, we noticed the term, 'gini index' in each node. Upon some research online, we clarified that gini index was a quantity between 0 and 1 that measured the degree of training observations in a tree node in falling into 1 class. A gini index closer to 1 means a larger amount of training observations not belonging to the same class. A gini index closer to 0 means a larger amount of training observations belonging to the same class. In other words, the gini index of a node measures how effective the split was that resulted in that particular node. 
+In printing out the tree, we noticed the term, 'gini index' in each node. Upon some research online, we clarified that gini index was a quantity between 0 and 1 that measured the degree of training observations in a tree node falling into 1 class, signifying the effectiveness of the split that resulted in that particular node in grouping the data. A gini index closer to 1 means a larger amount of training observations not belonging to the same class. A gini index closer to 0 means a larger amount of training observations belonging to the same class.
 
 </p>
 
@@ -256,6 +256,7 @@ We developed a total of five different machine learning models, with 11 variatio
 <img >
 </p>
 
+<hr/>
 <h4>References</h4>
 <ul>
 <li>Code for how to map Default values to True and map No Default values to False obtained from ChatGPT from google search AI
@@ -280,7 +281,7 @@ Definition of gini index gotten from ChatGPT
 <img src = "https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/Cite_Gini_Index_Definition.png" alt="Gini_index_definition">
 </li>
 <li>
-What 'samples' and 'values' mean in tree graph picture
+Meaning of 'samples' and 'values' in each node of picture of tree gotten from 
 https://stackoverflow.com/questions/65717850/what-is-the-meaning-of-value-in-a-node-in-sklearn-decisiontree-plot-tree
 </li>
 </ul>
