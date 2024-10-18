@@ -45,9 +45,7 @@ The target variable in this analysis is the Current_loan_status, which has two p
 
 <h3>Project Structure</h3>
 <hr/>
-<h4>Part I: Data Exploration</h4>
-
-<b>Summary of Demographic Dataset</b>
+<h4>Part I: Summary of Demographic Dataset</h4>
 
 <p> Home Ownership vs Loan Acceptance:
 The graph shows that homeowners have lower loan default rates than renters. Homeownership promotes financial stability, as homeowners prioritize mortgage payments, while renters face more volatility, increasing their default risk.</p>
@@ -68,29 +66,7 @@ The data shows historical defaults by age bracket, revealing that younger borrow
 
 ![pic_6](https://github.com/user-attachments/assets/d2c26932-3328-42e7-b9f5-7f24c16b04fc)
 
-<hr/>
 
-<b>Loan Characteristics</b>
-
-<p> Number of Customers vs Employment Duration:
-The bar chart represents the distribution of customers categorized by their employment duration and whether they have defaulted on a loan or not.</p>
-
-<img src= "https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_7.png" alt ="pic_7"/>
-
-<p> Default Vs No Default by loan categorization
-The donut charts provide a detailed visualization of loan defaults and no defaults categorized by the intent of the loan.
-</p>
-
-<img src= "https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_8.png" alt ="pic_8"/>
-
-
-
-<p> Number of Loans Vs Loan Grade with indication of Default and No Default  
-The stacked bar chart shows the number of loans by loan grade and default status, as well as the default rate for each loan grade.
-
-</p>
-
-<img src="https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/pic_9.png" alt ="pic_9"/>
 
 
 <hr/>
@@ -99,9 +75,9 @@ The stacked bar chart shows the number of loans by loan grade and default status
 </br>
 
 <p>
-<b>Logistic Regression, Decision Trees, and Random Forest</b>
+Logistic Regression, Decision Trees, and Random Forest
 
-<b>Model Description:</b>
+<b>Model Summary:</b>
 <p>
 Before the models were fit to the data, the data was split into training and testing subsets, and categorical variables were encoded into dummy variables. The training and testing sets contained 75% and 25% of the total dataset, respectively. The same training and testing sets were used for all 3 types of models (logistic, tree, random forest). Dummy variables were a method to make all the feature variables numeric and feedable into the sigmoid function underlying logistic regression. For the tree and random forest models, the data was scaled. 
 </p>
@@ -112,7 +88,7 @@ Next, the logistic regression, tree, and random forest models were fit to the da
 </p>
 
 <p>
-In addition to predicting whether a loan is defaulted or not, the three types of models (logistic, tree, and random) predict the <i> probability </i> of the loan being defaulted or not. In fact, the logistic regression uses this estimated probability to predict which one of the 2 categories (default or not) the loan falls. In a tree model, the probability of being defaulted for a test data point is the proportion of training data that have a target variable values of 'default' in the leaf in which the test data point falls (https://medium.com/ml-byte-size/how-does-decision-tree-output-predict-proba-12c78634c9d5). For the probability of not being defaulted, the same principle applies. In a random forest model, the probability of a loan being defaulted is calculated by the proportion of trees in the forest that predict the loan will be defaulted (Cite this later).
+In addition to predicting whether a loan is defaulted or not, the three types of models (logistic, tree, and random) predict the <i> probability </i> of the loan being defaulted or not. In fact, the logistic regression uses this estimated probability to predict which one of the 2 categories (default or not) the loan falls. In a tree model, the probability of being defaulted for a test data point is the proportion of training data that have a target variable values of 'default' in the leaf in which the test data point falls. For the probability of not being defaulted, the same principle applies. In a random forest model, the probability of a loan being defaulted is calculated by the proportion of trees in the forest that predict the loan will be defaulted (Cite this later).
 </p> 
 
 <p>
@@ -181,11 +157,12 @@ The three types of models were evaluated with confusion matrices and classificat
 
 <p>
 In evaluating the models, we focused on accuracy and emphasized recall(default) especially because this number signified the number of loans predicted to default out of all the loans that did actually default. In other words, it represented the financial risk of the lending business resulting from its failure to detect the customers who would default by using one of these models. First, logistic regression had a high accuracy of 95% but had a 87% recall (default), signaling a 13% financial loss for the company. For the trees, tree1 was disregarded simply for its lowest recall (default) of 74%. Next, even though logistic regression had an 87% recall (default), which was the same as tree2, tree2 outperformed logistic regression in all othe measures. Nonetheless, the random forest model either performed as well as or surpassed the tree and logistic regression models in all metrics of accuracy, precision, and accuracy, signaling its strong predictive abilities. 
-</p>
+
+
 
 <hr/>
 
-<b>Neural Network and Deep Learning Model</b>
+<h4>Part III: Neural Network and Deep Learning Model</h4>
 
 <p>
 <b>Dataset Preparation</b><br/>
@@ -195,7 +172,7 @@ The cleaned dataset was divided into two subsets:
 <li>df_wo_bucket: Excludes bucketed or categorized variables.</li>
 </ul>
 The purpose of this separation was to analyze which type of variables—numerical or categorical— perform better when applied to neural network models.
-</br>
+
 <b>Experimentation with Neural Network Models</b><br/>
 Several experiments were conducted using the two datasets to optimize the neural network’s performance. Key hyperparameters were adjusted to explore their impact on model accuracy:
 <ul>
@@ -278,3 +255,33 @@ We developed a total of five different machine learning models, with 11 variatio
 
 <img >
 </p>
+
+<h4>References</h4>
+<ul>
+<li>Code for how to map Default values to True and map No Default values to False obtained from ChatGPT from google search AI
+<img src="https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/Cite-Mapping.png" alt ="mapping_true_false"/>
+</li>
+<li>Code of how to make confusion matrix colorful pretty taken from 
+https://scikit-learn.org/stable/modules/generated/sklearn.metrics.ConfusionMatrixDisplay.html#sklearn.metrics.ConfusionMatrixDisplay.from_estimator</li>
+<li>
+How to make tree generate probabilities and setting a maximum depth take from
+https://stats.stackexchange.com/questions/193424/is-decision-tree-output-a-prediction-or-class-probabilities
+</li>
+<li>
+Idea of writing the picture of the tree to a pdf taken from ChatGPT because initial tree with unlimited depth was too big to display taken from ChatGPT
+<img src = "https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/Cite-Make-Tree-Clearer-ChatGPT.png" alt="write_tree_to_pdf"/>
+</li>
+<li>
+Information about how a tree calculates probability of each observation falling into each group
+https://medium.com/ml-byte-size/how-does-decision-tree-output-predict-proba-12c78634c9d5
+</li>
+<li>
+Definition of gini index gotten from ChatGPT
+<img src = "https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/Cite_Gini_Index_Definition.png" alt="Gini_index_definition">
+</li>
+<li>
+What 'samples' and 'values' mean in tree graph picture
+https://stackoverflow.com/questions/65717850/what-is-the-meaning-of-value-in-a-node-in-sklearn-decisiontree-plot-tree
+</li>
+</ul>
+
