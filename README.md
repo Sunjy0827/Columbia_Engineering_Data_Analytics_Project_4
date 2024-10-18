@@ -265,7 +265,12 @@ We developed a total of five different machine learning models, with 11 variatio
 <li>Code of how to make confusion matrix colorful pretty taken from 
 https://scikit-learn.org/stable/modules/generated/sklearn.metrics.ConfusionMatrixDisplay.html#sklearn.metrics.ConfusionMatrixDisplay.from_estimator</li>
 <li>
-How to make tree generate probabilities and setting a maximum depth take from
+How to get the probabilities generated from logistic regression modelof each data point falling into either class from Google search AI. After noticing that, we used Google again and saw that tree and random forest subclasses also had the same method.
+<img src = "https://github.com/Sunjy0827/Columbia_Engineering_Data_Analytics_Project_4/blob/main/Images/Cite_predict_proba.png" alt="predict_probabilities_method">
+
+</li>
+<li>
+How a tree generates probabilities and setting a maximum depth take from
 https://stats.stackexchange.com/questions/193424/is-decision-tree-output-a-prediction-or-class-probabilities
 </li>
 <li>
@@ -284,5 +289,6 @@ Definition of gini index gotten from ChatGPT
 Meaning of 'samples' and 'values' in each node of picture of tree gotten from 
 https://stackoverflow.com/questions/65717850/what-is-the-meaning-of-value-in-a-node-in-sklearn-decisiontree-plot-tree
 </li>
+
 </ul>
 
